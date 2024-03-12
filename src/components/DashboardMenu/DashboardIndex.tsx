@@ -1,11 +1,10 @@
 import Link from "next/link";
 import './dashboard.css'
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { RootApp } from "../MainContext/MainContext";
 
 import Image from 'next/image'
-import { AiOutlineClose } from "react-icons/ai";
-import { SlClose } from "react-icons/sl";
+
 import { RiCloseCircleFill } from "react-icons/ri";
 import { usePathname } from "next/navigation";
 export default function DashboardMenu() {
