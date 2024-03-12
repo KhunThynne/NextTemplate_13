@@ -1,0 +1,43 @@
+
+
+
+nav.NavigationRootMenu {
+
+    /* กำหนดความกว้างของเมนู */
+
+    transition: margin 0.5s ease-in-out;
+
+    /* transition: margin 0.5s ease-in-out; */
+    /* เพิ่มการทำ transition เมื่อมีการเปลี่ยนความกว้าง โดยใช้เวลา 0.3 วินาทีและเริ่มทำ transition ด้วยความลื่นไหล ease-in-out */
+}
+
+
+.Navigation.light {
+    background-color: rgba(255, 255, 255, 0.897);
+    color: rgb(0, 0, 0);
+}
+
+.Navigation.dark {
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+.light  nav.NavigationRootMenu li.link.active {
+
+
+    color: #88FF00;
+    text-wrap: nowrap;
+
+
+
+}
+
+.dark  nav.NavigationRootMenu li.link.active {
+
+
+    color: rgb(66, 66, 66);
+    text-wrap: nowrap;
+
+
+
+}

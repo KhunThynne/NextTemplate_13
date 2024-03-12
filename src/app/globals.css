@@ -18,12 +18,13 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+
 }
 
 @layer utilities {
@@ -31,3 +32,19 @@ body {
     text-wrap: balance;
   }
 }
+
+/* CSS */
+
+
+body.Scoll-Hidden {
+  /* height: 100%; */
+  overflow-y: hidden;
+}
+
+.contentslide {
+
+  transition: margin 0.5s ease-in-out;
+
+
+}
+

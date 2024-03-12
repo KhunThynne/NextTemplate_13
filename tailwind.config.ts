@@ -7,7 +7,18 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+
     extend: {
+      colors: {
+
+        'MenuDashboard': {
+          light: '#61dbfb',
+          DEFAULT: '#CCFF00',
+          dark: '#111',
+        },
+        'primary-a': "#CCFF00",
+        'secondary-a': "#88FF00",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
