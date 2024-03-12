@@ -1,17 +1,36 @@
 "use client"
 import DashboardMenu from "@/components/DashboardMenu/DashboardIndex"
 import Navigationbar from "@/components/Navigation/Navigationbar"
-import { useEffect, useContext, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import { RootApp } from '@/components/MainContext/MainContext'
 import Footer from "@/components/Footer"
 
 import { Inter } from "next/font/google";
+import { cookies } from "next/headers"
+import { setThemeCookie, getTheme } from "./themeaction"
+
 const inter = Inter({ subsets: ["latin"] });
+
+
 export default function Template({ children }: { children: React.ReactNode }) {
     const [isDashboard, setDashboard] = useState(false);
-    const [isTheme, setTheme] = useState('dark');
+    const defaultTheme = useRef('light')
+    const [isTheme, setTheme] = useState<any>('');
+    useEffect(() => {
+        getTheme().then(val => {
 
+            setTheme(val ? val : defaultTheme.current);
+
+
+        })
+        // setThemeCookie(isTheme);
+    }, [])
+    useEffect(() => {
+
+        setThemeCookie(isTheme);
+        // setThemeCookie(isTheme);
+    }, [isTheme])
 
     return <>
         <RootApp.Provider value={{ isDashboard, setDashboard, isTheme }}>
