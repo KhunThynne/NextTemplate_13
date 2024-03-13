@@ -33,7 +33,7 @@ export default function Navigationbar() {
 
 
 
-    }, [])
+    }, [setTheme])
 
     const ThemeSelet = (theme: string) => {
         setTheme(theme)
