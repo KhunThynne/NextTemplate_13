@@ -48,3 +48,17 @@ body.Scoll-Hidden {
 
 }
 
+body.load{
+  display: none;
+  
+}
+
+body.light{
+  background-color: rgb(235, 235, 235);
+  color: dark;
+  
+}
+body.dark{
+  background-color: rgb(41, 41, 41);
+  color: white;
+}

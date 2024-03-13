@@ -1,0 +1,44 @@
+.LoadLayout {
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.774);
+
+
+}
+
+/* Animation for showing loading */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.LoadLayout.load {
+    display: block;
+    animation: fadeOut 0.9s ease-in-out;
+    /* Apply fadeIn animation */
+}
+
+/* Animation for hiding loading */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.LoadLayout.unload {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+    /* Apply fadeOut animation */
+}

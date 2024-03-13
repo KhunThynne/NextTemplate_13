@@ -6,10 +6,12 @@ import { RootApp } from "../MainContext/MainContext";
 import Image from 'next/image'
 
 import { RiCloseCircleFill } from "react-icons/ri";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+
 export default function DashboardMenu() {
     const { isDashboard, setDashboard, isTheme } = useContext(RootApp)
     const pathname = usePathname();
+    const router = useRouter();
     const Active = (path: string) => {
         return ` link ${pathname === path ? 'active' : ''} `
     }
@@ -34,14 +36,17 @@ export default function DashboardMenu() {
                             <li className={Active('/test')}>
                                 <Link href="/blog/hello-world">Test System</Link>
                             </li>
+                            <li className={Active('/dashboard')}>
+                                <div className="cursor-pointer" onClick={() => router.push('/dashboard', { scroll: false })}>Dashboard</div>
+                            </li >
                         </div>
                     </div>
 
                     <li className="flex justify-center">
 
-                        {isTheme && <Image
+                        {(isTheme && isTheme !== 'load') && <Image
 
-                         
+
                             src={`/thirteen${isTheme}.svg`}
                             width={150}
                             height={150}

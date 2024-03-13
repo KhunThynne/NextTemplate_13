@@ -16,16 +16,30 @@ const setThemeCookie = async (theme: any) => {
     // cookies().delete('name')
 }
 
+
+
+
 const getTheme = async () => {
-    // Get cookie
-    // const value = cookies().get('name')?.value
+    try {
 
-    // Set cookie
-    const theme = cookies().get('theme')?.value
 
-    // Delete cookie
-    // cookies().delete('name')
-    return theme
+        const setdefault = 'light';
+
+
+        const cookieStore = cookies()
+        const theme = cookieStore.get('theme')
+
+        if (!theme) {
+
+            setThemeCookie(setdefault)
+            return 'light';
+        }
+        return theme?.value;
+    } catch (err) {
+        return err
+    }
+
+
 }
 
 export { setThemeCookie, getTheme }
