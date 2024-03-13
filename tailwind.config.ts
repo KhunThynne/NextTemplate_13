@@ -9,6 +9,10 @@ const config: Config = {
   theme: {
 
     extend: {
+      screens: {
+        'xs': { "max": "260px" },
+
+      },
       colors: {
 
         'MenuDashboard': {

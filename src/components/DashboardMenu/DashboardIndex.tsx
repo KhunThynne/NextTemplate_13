@@ -18,8 +18,8 @@ export default function DashboardMenu() {
 
     return (
         <>
-            <div className="shadow">
-                <div className={`${isDashboard && 'bg-[#141414] w-screen h-screen  fixed top-0 opacity-50 lg:hidden'}`} onClick={() => { setDashboard(false) }} />
+            <div className="shadow ">
+                <div className={`${isDashboard && 'bg-[#141414]  w-screen h-screen  fixed top-0 opacity-50 lg:hidden'}`} onClick={() => { setDashboard(false) }} />
 
                 <ul className={`flex flex-col justify-between SideMenu   ${isTheme === 'light' ? 'bg-MenuDashboard-light' : 'bg-MenuDashboard-dark'}  w-[80%] md:w-[50%] lg:w-[255px] ${isDashboard ? 'open ' : 'close'}`}>
                     <div >

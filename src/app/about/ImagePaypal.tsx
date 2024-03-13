@@ -6,9 +6,8 @@ import Image from 'next/image'
 export default function Paypal() {
 
     return <>
-        <div className='flex gap-4'>
-            <Image src={Arm} className="lg:w-[250px] w-[20vw]" alt='Arm' />
-            <Image src={Poomz} className="lg:w-[250px] w-[20vw]" alt='Poomz' />
-            <Image src={Thynne} className="lg:w-[250px] w-[20vw]" alt='Thynne' /></div>
-    </>
+
+        <Image src={Arm} className="md:w-[250px] w-[50vw]" alt='Arm' />
+        <Image src={Poomz} className="md:w-[250px] w-[50vw]" alt='Poomz' />
+        <Image src={Thynne} className="md:w-[250px] w-[50vw]" alt='Thynne' /></>
 }

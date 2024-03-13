@@ -24,7 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
-
+  background-color: rgb(0, 0, 0);
 }
 
 @layer utilities {
@@ -48,17 +48,18 @@ body.Scoll-Hidden {
 
 }
 
-body.load{
+body.load {
   display: none;
-  
+
 }
 
-body.light{
+body.light {
   background-color: rgb(235, 235, 235);
   color: dark;
-  
+
 }
-body.dark{
+
+body.dark {
   background-color: rgb(41, 41, 41);
   color: white;
 }

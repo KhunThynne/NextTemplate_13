@@ -31,10 +31,10 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
 
                 <Navigationbar />
-                <main className="relative h-screen overflow-hidden">
+                <main className="relative min-h-screen overflow-hidden">
                     <DashboardMenu />
                     <div className={` contentslide ${isDashboard && "lg:ms-[255px] "} `}>
-                        <div className="m-5 mt-16 h-screen  flex justify-center  ">
+                        <div className="m-5 mt-16 flex justify-center  ">
                             <div >
 
                                 {children}
