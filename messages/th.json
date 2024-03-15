@@ -1,0 +1,9 @@
+{
+    "Index": {
+        "title": "Hello world!"
+    },
+    "Navigation": {
+        "Home": "หน้าหลัก",
+        "About": "เกี่ยวกับเรา"
+    }
+}

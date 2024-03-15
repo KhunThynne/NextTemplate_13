@@ -1,8 +1,15 @@
 
-"use client"
+
+
+
+
+
+import { useTranslations } from 'next-intl';
+
+
 import Link from "next/link";
 import { useContext, useEffect } from "react";
-import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 import { RootApp } from "../MainContext/MainContext";
 import './Navigationbar.css'
@@ -10,9 +17,10 @@ import { TiThMenu } from "react-icons/ti";
 import { CiDark, CiLight } from "react-icons/ci";
 import { getTheme, setThemeCookie } from "./themeaction";
 
-
 export default function Navigationbar() {
-    const router = useRouter();
+    const t = useTranslations('Navigation');
+
+
     const { isDashboard, setDashboard, isTheme, setTheme } = useContext(RootApp);
     const pathname = usePathname();
 
@@ -67,11 +75,12 @@ export default function Navigationbar() {
                         </div>
                         <div className="flex justify-center sm:gap-40 gap-5 xs:text-[6vw]" style={{ whiteSpace: "nowrap" }}>
                             <li className={Active('/')}>
-                                <Link href="/"  > Home </Link >
+                                <Link href="/"  > {t('Home')} </Link >
                             </li >
 
                             <li className={Active('/about')}>
-                                <div className="cursor-pointer" onClick={() => router.push('/about', { scroll: false })}>About Us</div>
+                                <Link href="/about"  > {t('About')} </Link >
+
                             </li >
 
                         </div>

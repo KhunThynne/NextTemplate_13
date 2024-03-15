@@ -10,6 +10,7 @@ import { Inter } from "next/font/google";
 
 
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 
@@ -23,29 +24,29 @@ export default function Template({ children }: { children: React.ReactNode }) {
     return <>
 
 
-        <RootApp.Provider value={{ isDashboard, setDashboard, isTheme, setTheme }}>
+            <RootApp.Provider value={{ isDashboard, setDashboard, isTheme, setTheme }}>
 
-            <body className={`${isTheme} ${inter.className} ${isDashboard && "lg:overflow-auto overflow-hidden "}`}>
-
-
+                <body className={`${isTheme} ${inter.className} ${isDashboard && "lg:overflow-auto overflow-hidden "}`}>
 
 
-                <Navigationbar />
-                <main className="relative min-h-screen overflow-hidden">
-                    <DashboardMenu />
-                    <div className={` contentslide ${isDashboard && "lg:ms-[255px] "} `}>
-                        <div className="flex justify-center py-5">
 
 
-                            {children}
+                    <Navigationbar />
+                    <main className="relative min-h-screen overflow-hidden">
+                        <DashboardMenu />
+                        <div className={` contentslide ${isDashboard && "lg:ms-[255px] "} `}>
+                            <div className="flex justify-center py-5">
+
+
+                                {children}
+                            </div>
                         </div>
-                    </div>
-                </main>
-                <Footer />
+                    </main>
+                    <Footer />
 
 
-            </body>
+                </body>
 
-        </RootApp.Provider>
+            </RootApp.Provider> 
     </>
 }
