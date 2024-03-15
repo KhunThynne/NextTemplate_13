@@ -1,7 +1,7 @@
 import { Card, CardBody, CardFooter, CardHead, Cards } from "@/components/Cards/CardIndex";
 
 
-
+import './table.css'
 
 export default function GridTablePage() {
 
@@ -11,8 +11,8 @@ export default function GridTablePage() {
 
 
 
-        <Cards className='p-2 w-full md:px-10' >
-            <CardHead className='border border-primary-a p-3' >
+        <Cards className='p-2 lg:w-[70vw] w-[100vw] md:px-10' >
+            <CardHead className=' p-3' >
                 Table
             </CardHead>
             <CardBody className='p-2  '>

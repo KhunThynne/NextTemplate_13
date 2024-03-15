@@ -16,9 +16,9 @@ import './Navigationbar.css'
 import { TiThMenu } from "react-icons/ti";
 import { CiDark, CiLight } from "react-icons/ci";
 import { getTheme, setThemeCookie } from "./themeaction";
-import { unstable_setRequestLocale } from 'next-intl/server';
 
-export default function Navigationbar({ children }: { children?: React.ReactNode }) {
+
+export default function Navigationbar() {
 
     const t = useTranslations('Navigation');
 

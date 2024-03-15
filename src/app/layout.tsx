@@ -18,9 +18,11 @@ export default function RootLayout({
   params: any;
 }>) {
   unstable_setRequestLocale(locale);
+ 
   const messages = useMessages()
+  console.log(messages)
   return (
-    <html lang="en">
+    <html lang={locale}>
 
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <NextIntlClientProvider messages={messages} locale={locale}>
