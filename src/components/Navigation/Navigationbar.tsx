@@ -56,7 +56,8 @@ export default function Navigationbar() {
                         </div>
                         <div>
 
-                            <li className='flex items-center gap-1 sm:gap-5 xs:text-[6vw] text-[20px]'>
+                            <li className='flex items-center gap-1 sm
+                            :gap-5 xs:text-[6vw] text-[20px]'>
 
                                 <CiLight className={`${isTheme === 'light' ? 'text-[#eea60b]' : null} cursor-pointer`} onClick={() => { ThemeSelet('light') }} />
 

@@ -1,0 +1,57 @@
+.index-card-t {
+
+
+
+    position: relative;
+
+}
+
+.card-t {
+    background-color: white;
+    border-radius: 5px;
+    min-height: 25vh;
+}
+
+.index-card-t .head-card {
+
+    border-radius: 5px 5px 0 0;
+
+
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.index-card-t .body-card {
+    background-color: white;
+
+    min-height: 25vh;
+}
+
+.index-card-t .foot-card {
+
+    border-radius: 0 0 5px 5px;
+    position: initial;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+
+.dark .index-card-t .head-card {
+    color: #000;
+
+}
+
+.dark .index-card-t .body-card {
+    background-color: #1d1c1c;
+
+
+}
+
+.dark .index-card-t .foot-card {
+
+
+    background-color: rgb(54, 54, 54);
+}

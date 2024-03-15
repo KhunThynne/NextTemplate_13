@@ -4,10 +4,10 @@ import { useContext, useEffect, useState } from "react";
 import { RootApp } from "../MainContext/MainContext";
 
 import Image from 'next/image'
-
+import { BiSolidComponent } from "react-icons/bi";
 import { RiCloseCircleFill } from "react-icons/ri";
 import { usePathname, useRouter } from "next/navigation";
-
+import { BsTable } from "react-icons/bs";
 export default function DashboardMenu() {
     const { isDashboard, setDashboard, isTheme } = useContext(RootApp)
     const pathname = usePathname();
@@ -19,7 +19,7 @@ export default function DashboardMenu() {
     return (
         <>
             <div className="shadow ">
-                <div className={`${isDashboard && 'bg-[#141414]  w-screen h-screen  fixed top-0 opacity-50 lg:hidden'}`} onClick={() => { setDashboard(false) }} />
+                <div style={{ zIndex: '8' }} className={`${isDashboard && 'bg-[#141414]  w-screen h-screen  fixed top-0 opacity-50 lg:hidden'}`} onClick={() => { setDashboard(false) }} />
 
                 <ul className={`flex flex-col justify-between SideMenu   ${isTheme === 'light' ? 'bg-MenuDashboard-light' : 'bg-MenuDashboard-dark'}  w-[80%] md:w-[50%] lg:w-[255px] ${isDashboard ? 'open ' : 'close'}`}>
                     <div >
@@ -30,14 +30,24 @@ export default function DashboardMenu() {
                             <li className={Active('/')}>
                                 <Link href="/">Home</Link>
                             </li>
-                            <li className={Active('/about')}>
+                            <li >
                                 <Link href="/about">About Us</Link>
                             </li>
-                            <li className={Active('/test')}>
-                                <Link href="/blog/hello-world">Test System</Link>
+
+
+
+                            <li className={Active('/example/gridtable')}>
+
+                                <div className="cursor-pointer flex gap-3 items-center" onClick={() => router.push('/example/gridtable', { scroll: false })}>
+                                    <BsTable size={20} /> Grid table
+                                </div>
+
                             </li>
-                            <li className={Active('/dashboard')}>
-                                <div className="cursor-pointer" onClick={() => router.push('/dashboard', { scroll: false })}>Dashboard</div>
+
+                            <li className={Active('/example/components')}>
+                                <div className="cursor-pointer flex gap-2 items-center" onClick={() => router.push('/example/components', { scroll: false })}>
+                                    <BiSolidComponent size={25} />
+                                    Components</div>
                             </li >
                         </div>
                     </div>

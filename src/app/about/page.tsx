@@ -12,14 +12,16 @@ export default function About() {
 
     const [Load, setLoad] = useState<any>(false)
 
-    return (<>
-        Thirtteen
+    return (<div>
+        <div>
+            Thirtteen
 
-        <div className="flex gap-5 flex-col lg:flex-row">
-            {<Paypal />}
+            <div className="flex gap-5 flex-col lg:flex-row">
+                {<Paypal />}
 
+            </div>
         </div>
-    </>
+    </div>
 
 
 
