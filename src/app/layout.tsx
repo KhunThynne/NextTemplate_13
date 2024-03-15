@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 
-
+import {unstable_setRequestLocale} from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: "Next",
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
   params: any;
 }>) {
-
+  unstable_setRequestLocale(locale);
   const messages = useMessages()
   return (
     <html lang="en">

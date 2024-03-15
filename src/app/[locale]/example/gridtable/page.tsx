@@ -1,7 +1,7 @@
 import { Card, CardBody, CardFooter, CardHead, Cards } from "@/components/Cards/CardIndex";
 
 
-import './table.css'
+
 
 export default function GridTablePage() {
 
