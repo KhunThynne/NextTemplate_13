@@ -2,7 +2,9 @@ import { Card, CardBody, CardFooter, CardHead, Cards } from "@/components/Cards/
 
 
 import './table.css'
-
+/*  ระบบ ตรวจสอบจำนวน leng data สร้างจำนวน page ที่สามารถ get 2 หน้าแสดงที่ล่ะหน้า
+โจทย์ คือ แบ่ง page page ล่ะ 10 data
+*/ 
 export default function GridTablePage() {
 
 

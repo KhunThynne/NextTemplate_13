@@ -24,7 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
-  background-color: rgb(0, 0, 0);
+  background-color: #111;
 }
 
 @layer utilities {
@@ -55,12 +55,19 @@ body.load {
 
 body.light {
   background-color: rgb(235, 235, 235);
-  color: dark;
+  color: #111;
 
 }
 
-body.dark {
+body.dark,
+.ErrorNotFount.dark {
   background-color: rgb(41, 41, 41);
   color: white;
 }
 
+
+.ErrorNotFount.light {
+  background-color: rgb(255, 255, 255);
+  color: #111;
+
+}
