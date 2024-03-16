@@ -6,21 +6,30 @@ import { RootApp } from "../MainContext/MainContext";
 import Image from 'next/image'
 import { BiSolidComponent } from "react-icons/bi";
 import { RiCloseCircleFill } from "react-icons/ri";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { redirect, usePathname, useRouter, useSearchParams } from "next/navigation";
 import { BsTable } from "react-icons/bs";
-
 
 export default function DashboardMenu() {
     const { isDashboard, setDashboard, isTheme } = useContext(RootApp)
     const pathname = usePathname();
-   
-    const searchParams = useSearchParams()
+    const rounter = useRouter();
 
-    const locale = searchParams.get('locale')
-   
+    const pathA = pathname.split('/');
+
     const Active = (path: string) => {
-        return ` link ${pathname === path ? 'active' : ''} `
+
+        return ` link ${pathname === `/${pathA[1]}${path}` ? 'active' : ''} `
     }
+
+    function switchLocale(locale: string) {
+        // e.g. '/en/about' or '/fr/contact'
+        pathA[1] = locale;
+        const newPath = pathA.join('/');
+        
+        window.history.pushState(null, '', newPath)
+        location.reload()
+    }
+
 
     return (
         <>
@@ -32,13 +41,13 @@ export default function DashboardMenu() {
                     <div >
                         <li className="text-end px-10">
                             <button className="close" onClick={() => { setDashboard(false) }}><RiCloseCircleFill size={22} /></button>
-                            {locale}
+
                         </li>
                         <div className="pt-16 flex flex-col gap-5">
-                            <li className={Active('/')}>
-                                <Link href="/">Home</Link>
+                            <li className={Active('')}>
+                                <Link href="/">Home </Link>
                             </li>
-                            <li >
+                            <li className={Active('/about')}>
                                 <Link href="/about">About Us</Link>
                             </li>
 
@@ -59,19 +68,30 @@ export default function DashboardMenu() {
                                     <BiSolidComponent size={25} />
                                     Components</Link>
                             </li >
+
+
                         </div>
                     </div>
 
-                    <li className="flex justify-center">
+                    <li className="" >
 
-                        {(isTheme && isTheme !== 'load') && <Image
+                        <div className="flex gap-6 justify-center my-5 items-center">
+
+                            <div className={`cursor-pointer p-1 ${pathA[1] === "th" ? "border" : null}`} onClick={() => { switchLocale('th') }}> TH </div> <div> || </div>
 
 
-                            src={`/thirteen${isTheme}.svg`}
-                            width={150}
-                            height={150}
-                            alt="Logo "
-                        />}
+                            <div className={` cursor-pointer p-1 ${pathA[1] === "en" ? "border" : null}`} onClick={() => { switchLocale('en') }}> EN </div>
+                        </div>
+                        <div className="flex  justify-center">
+                            {(isTheme && isTheme !== 'load') && <Image
+
+
+                                src={`/thirteen${isTheme}.svg`}
+                                width={150}
+                                height={150}
+                                alt="Logo "
+                            />}
+                        </div>
                     </li>
                 </ul>
 

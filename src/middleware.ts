@@ -1,5 +1,5 @@
 import createMiddleware from 'next-intl/middleware';
-import { cookies } from 'next/headers'
+
 export default createMiddleware({
   // A list of all locales that are supported
   locales: ['en', 'th'],
@@ -9,6 +9,6 @@ export default createMiddleware({
 });
 
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/', '/about:path*', '/example/:path*', '/(th|en)/:path*']
+
+  matcher: ['/', '/about:path*', '/example/:path*', '/(th|en)/:path*', '/((?!_next|_vercel|.*\\..*).*)']
 };

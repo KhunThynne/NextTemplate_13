@@ -18,10 +18,11 @@ import { CiDark, CiLight } from "react-icons/ci";
 import { getTheme, setThemeCookie } from "./themeaction";
 
 
+
 export default function Navigationbar() {
 
     const t = useTranslations('Navigation');
-
+  
 
     const { isDashboard, setDashboard, isTheme, setTheme } = useContext(RootApp);
     const pathname = usePathname();
@@ -81,7 +82,9 @@ export default function Navigationbar() {
                             </li >
 
                             <li className={Active('/about')}>
-                                <Link href="/about"  > {t('About')} </Link >
+                                <Link href="/about"  > {t('About')} 
+                            
+                                 </Link >
 
                             </li >
 

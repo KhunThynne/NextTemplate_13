@@ -1,36 +1,29 @@
 
 
-import type { Metadata } from "next";
 
-import "./globals.css";
+import './globals.css'
 
-import {unstable_setRequestLocale} from 'next-intl/server';
 
+
+import { ReactNode } from 'react';
+
+
+type Props = {
+    children: ReactNode;
+}; import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Next",
-  description: "Team 13",
+    title: "Next",
+    description: "Team 13",
 };
-import { NextIntlClientProvider, useMessages } from 'next-intl';
-export default function RootLayout({
-  children, params: { locale }
-}: Readonly<{
-  children: React.ReactNode;
-  params: any;
-}>) {
-  unstable_setRequestLocale(locale);
- 
-  const messages = useMessages()
-  console.log(messages)
-  return (
-    <html lang={locale}>
 
-      <link rel="icon" href="/favicon.ico" sizes="any" />
-      <NextIntlClientProvider messages={messages} locale={locale}>
+// Since we have a `not-found.tsx` page on the root, a layout file
+// is required, even if it's just passing children through.
+export default function RootLayout({ children }: Props) {
+    return < html lang="en" >
 
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         {children}
-      </NextIntlClientProvider>
-      {/* <Footer /> */}
-
-    </html>
-  );
+    </html >;
 }
+
+
