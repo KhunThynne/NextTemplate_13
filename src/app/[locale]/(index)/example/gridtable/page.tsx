@@ -2,12 +2,44 @@ import { Card, CardBody, CardFooter, CardHead, Cards } from "@/components/Cards/
 
 
 import './table.css'
+import { demo_Data } from "./data";
 /*  ระบบ ตรวจสอบจำนวน leng data สร้างจำนวน page ที่สามารถ get 2 หน้าแสดงที่ล่ะหน้า
 โจทย์ คือ แบ่ง page page ล่ะ 10 data
-*/ 
+*/
 export default function GridTablePage() {
+    const Data = async () => {
+        return demo_Data().then((val: any) => {
+            const keys = Object.keys(val.data);
+            const data = val.data
+            return (
+                <>
+                    <thead>
+                        <tr>
+                            {/* สร้าง header จาก keys */}
+                            <th>#</th>
+                            {keys.map((key, index) => (
+                                <th key={index}>{key}</th>
+                            ))}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* สร้างแถวข้อมูล */}
+                        {data[keys[0]].map((_: any, rowIndex: any) => (
+                            <tr key={rowIndex}>
+                                <th scope="row">{rowIndex + 1}</th>
+                                {/* สร้างเซลล์ข้อมูลในแต่ละแถว */}
+                                {keys.map((key, cellIndex) => (
+                                    <td key={cellIndex}>  {data[key][rowIndex] ? data[key][rowIndex] : "undefined"} </td>
+                                ))}
+                            </tr>
+                        ))}
+                    </tbody>
+                </>
+            )
+        })
 
 
+    }
     return (
 
 
@@ -22,7 +54,9 @@ export default function GridTablePage() {
 
 
                     <table className="table table-striped w-[100%]">
-                        <thead>
+
+                        <Data />
+                        {/* <thead>
                             <tr>
                                 <th>#</th>
                                 <th>First Name</th>
@@ -81,7 +115,7 @@ export default function GridTablePage() {
                                 <th>6</th>
                                 <th>The sentance starts here</th>
                             </tr>
-                        </tbody>
+                        </tbody> */}
                     </table>
 
 
